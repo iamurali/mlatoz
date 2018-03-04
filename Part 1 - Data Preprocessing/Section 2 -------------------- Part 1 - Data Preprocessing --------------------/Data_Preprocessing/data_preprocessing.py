@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.preprocessing import Imputer
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+from sklearn.cross_validation import train_test_split
 import copy
 
 # Importing the dataset
@@ -55,3 +56,10 @@ labelpurchase = LabelEncoder()
 Y = labelpurchase.fit_transform(Y)
 
 
+# ====> splitting data into train set and test set
+
+mean_training, mean_test, Y_training, Y_test = train_test_split(mean_x, Y, test_size=0.2, random_state=0)
+print(mean_training)
+print(mean_test)
+print(Y_training)
+print(Y_test)
