@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.preprocessing import Imputer
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 import copy
 
 # Importing the dataset
@@ -39,3 +40,18 @@ mode_x = copy.deepcopy(X)
 mode_imputer = Imputer(missing_values= "NaN", strategy= "most_frequent", axis= 0)
 mode_x[:, 1:3] = mode_imputer.fit_transform(mode_x[:, 1:3])
 print(mode_x)
+
+
+# ====> categorical data
+
+# ====> using mean
+
+labelencoder = LabelEncoder()
+mean_x[:, 0] = labelencoder.fit_transform(mean_x[:, 0])
+onehotencoder = OneHotEncoder(categorical_features = [0])
+mean_x = onehotencoder.fit_transform(mean_x).toarray()
+
+labelpurchase = LabelEncoder()
+Y = labelpurchase.fit_transform(Y)
+
+

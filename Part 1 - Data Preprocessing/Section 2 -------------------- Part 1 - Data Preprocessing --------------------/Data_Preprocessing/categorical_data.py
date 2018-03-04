@@ -51,4 +51,7 @@ mean_x[:, 0] = labelencoder.fit_transform(mean_x[:, 0])
 onehotencoder = OneHotEncoder(categorical_features = [0])
 mean_x = onehotencoder.fit_transform(mean_x).toarray()
 
+labelpurchase = LabelEncoder()
+Y = labelpurchase.fit_transform(Y)
+
 
