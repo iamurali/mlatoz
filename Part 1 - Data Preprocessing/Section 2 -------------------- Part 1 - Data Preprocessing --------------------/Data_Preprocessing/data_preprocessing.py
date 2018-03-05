@@ -7,6 +7,7 @@ import pandas as pd
 from sklearn.preprocessing import Imputer
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.cross_validation import train_test_split
+from sklearn.preprocessing import StandardScaler
 import copy
 
 # Importing the dataset
@@ -63,3 +64,10 @@ print(mean_training)
 print(mean_test)
 print(Y_training)
 print(Y_test)
+
+
+# ====> scaling
+sc_X = StandardScaler()
+scale_X = sc_X.fit_transform(mean_training)
+Y = sc_X.transform(mean_test)
+

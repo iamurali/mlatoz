@@ -34,3 +34,11 @@ test_set = subset(dataset, split == FALSE)
 
 print(training_set)
 print(test_set)
+
+# ====> scaling the set 
+
+training_set[, 2:3] = scale(training_set[, 2:3])
+test_set[, 2:3] = scale(training_set[, 2:3])
+
+print(training_set)
+print(test_set)
