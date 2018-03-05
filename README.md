@@ -1,3 +1,3 @@
 # mlatoz
 
-### Udemy course assignments for machinde learning using Python and R
+### Udemy course assignments for machine learning using Python and R
