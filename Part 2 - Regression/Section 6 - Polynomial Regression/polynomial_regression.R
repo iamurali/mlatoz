@@ -54,6 +54,8 @@ polynomial_plot = ggplot() +
 
 ggsave(filename = 'R_polynomial_regression.png', plot = polynomial_plot)
 
+
+
 # =====> Linear regression predict
 y_pred = predict(linear_reg, newdata = data.frame(Level = 6.5))
 print(y_pred)
@@ -61,3 +63,14 @@ print(y_pred)
 # ====> Polynomial regression predict
 y_poly_pred = predict(polynominal_reg, newdata = data.frame(Level = 6.5, Level2 = 6.5^2, Level3 = 6.5^3, Level4 = 6.5^4))
 print(y_poly_pred)
+# ====> Regression model with high resoultion
+
+# level_grid = seq(min(dataset$Level), max(dataset$Level), by=0.1)
+# 
+# ggplot() +
+#   geom_point(aes(x= dataset$Level, y= dataset$Salary), color='red') +
+#   geom_line(aes(x= level_grid, y=predict(polynominal_reg, newdata = data.frame(Level = level_grid))), color='blue') +
+#   ggtitle('Truth or Bluff (Polynomial Regression) R') +
+#   xlab('Level') + 
+#   ylab('Salary')
+# 
