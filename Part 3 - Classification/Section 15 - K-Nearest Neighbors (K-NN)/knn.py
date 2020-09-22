@@ -20,12 +20,7 @@ def draw_plot(x_set, y_set, classifier):
   plt.xlim(x1.min(), x1.max())
   plt.ylim(x2.min(), x2.max())
   for i, j in enumerate(np.unique(y_set)):
-    idx = (y_set == j)
-    print(np.unique(y_set))
-    print(x_set[idx])
-    print(j)
     plt.scatter(x_set[y_set == j, 0], x_set[ y_set == j, 1], cmap = ListedColormap(('red', 'green'))(i), label = j)
-    
   plt.title('K NN Classifier ')
   plt.xlabel('Age')
   plt.ylabel('Estimated Salary')
